@@ -14,6 +14,21 @@ public class Exercicio1 {
 		 x = input.nextInt();   
 		 System.out.print("Digite o segundo número:" );   
 		 y = input.nextInt();   
+		 soma = x + y;
+		 subt = x - y;
+		 mult = x * y;
+
+		 System.out.println("O resultado da Soma: " + soma);
+		 System.out.println("O resultado da Subtração: " + subt);
+		 System.out.println("O resultado da Multiplicação: " + mult);
+
+		 if (y != 0) {
+			double divisao = (double) x / y;
+			System.out.println("O resultado da Divisão: " + divisao);
+		 } else 
+		 {
+			System.out.println("O resultado não pode ser dividido por 0");
+		}
 		 
 		 //escreva seu código aqui
 
