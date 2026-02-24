@@ -7,6 +7,15 @@ public class Exercicio5 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		
+		double celsius;
+        double fahrenheit;
+        
+        System.out.print("Digite a temperatura em graus Celsius: ");
+        celsius = input.nextDouble();
+        
+        fahrenheit = (9 * celsius + 160) / 5;
+        
+        System.out.println("Temperatura em Fahrenheit: " + fahrenheit);
 		//escreva seu código aqui
 		 
 		 input.close();
