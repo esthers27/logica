@@ -29,38 +29,76 @@ public class Exercicio18 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		
-		int codigo, horasTrabalhadas, qtdeFuncionarios = 10;
-		char turno, categoria;
-		double valorHora, salarioInicial, auxilioAlimentacao;
-		
-		for (int i = qtdeFuncionarios; i > 0; i-- ) {
-			turno = 'X';
-			categoria = 'X';
-		
-			System.out.print("Insira o código do funcionário: ");
-			codigo = input.nextInt();
-			
-			System.out.print("Turno (M - matutino, V - vespertino ou N - noturno): ");
-			
-			while (turno != 'M' && turno != 'V' && turno != 'N') {
-				turno = input.next().charAt(0);
-				
-				if (turno != 'M' && turno != 'V' && turno != 'N') {
-					System.out.println("Turno inválido"); }
-			}
-			
-			System.out.print("Insira a categoria do funcionário (O - operário ou G - gerente): ");
-			
-			while (categoria != 'G' && categoria != 'O') {
-				categoria = input.next().charAt(0);
-				
-				if (categoria != 'G' && categoria != 'O') {
-					System.out.println("Categoria inválida"); }
-			}
-			
-			
-			
-			double salarioMinimo = 450.00;
+		int codigo, horasTrabalhadas;
+        char turno, categoria;
+        double valorHora, salarioInicial, auxilioAlimentacao, salarioFinal;
+        double salarioMinimo = 450.00;
+
+        for (int i = 1; i <= 10; i++) {
+
+            System.out.println("Funcionário " + i);
+
+            System.out.print("Insira o código do funcionário: ");
+            codigo = input.nextInt();
+
+         
+            turno = 'X';
+            System.out.print("Turno (M - matutino, V - vespertino ou N - noturno): ");
+            while (turno != 'M' && turno != 'V' && turno != 'N') {
+                turno = input.next().charAt(0);
+                if (turno != 'M' && turno != 'V' && turno != 'N') {
+                    System.out.println("Turno inválido. Digite novamente:");
+                }
+            }
+
+            categoria = 'X';
+            System.out.print("Categoria (O - operário ou G - gerente): ");
+            while (categoria != 'O' && categoria != 'G') {
+                categoria = input.next().charAt(0);
+                if (categoria != 'O' && categoria != 'G') {
+                    System.out.println("Categoria inválida. Digite novamente:");
+                }
+            }
+
+            System.out.print("Número de horas trabalhadas: ");
+            horasTrabalhadas = input.nextInt();
+
+        
+            if (categoria == 'G') {
+                if (turno == 'N') {
+                    valorHora = salarioMinimo * 0.18;
+                } else {
+                    valorHora = salarioMinimo * 0.15;
+                }
+            } else { 
+                if (turno == 'N') {
+                    valorHora = salarioMinimo * 0.13;
+                } else {
+                    valorHora = salarioMinimo * 0.10;
+                }
+            }
+
+            salarioInicial = horasTrabalhadas * valorHora;
+
+            if (salarioInicial <= 300) {
+                auxilioAlimentacao = salarioInicial * 0.20;
+            } else if (salarioInicial <= 600) {
+                auxilioAlimentacao = salarioInicial * 0.15;
+            } else {
+                auxilioAlimentacao = salarioInicial * 0.05;
+            }
+
+    
+            salarioFinal = salarioInicial + auxilioAlimentacao;
+
+            System.out.println("Código: " + codigo);
+            System.out.println("Horas trabalhadas: " + horasTrabalhadas);
+            System.out.printf("Valor da hora: R$ %.2f%n", valorHora);
+            System.out.printf("Salário inicial: R$ %.2f%n", salarioInicial);
+            System.out.printf("Auxílio-alimentação: R$ %.2f%n", auxilioAlimentacao);
+            System.out.printf("Salário final: R$ %.2f%n", salarioFinal);
+            System.out.println("--------------------------------------");
+        }
 			
 			 //escreva seu código aqui
 
