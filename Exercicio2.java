@@ -7,11 +7,19 @@ public class Exercicio2 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		
-		double ConsumoMedio;
-		double kmi; // distância inicial
-		double kmf; //distância final
-		double litros;
-		double kmtotal;
+	    double kmi;
+        double litros;
+        double consumoMedio;
+
+        System.out.println("Digite a distância total percorrida (km): ");
+        kmi = input.nextDouble();
+
+        System.out.println("Digite o total de combustível gasto (litros): ");
+        litros = input.nextDouble();
+
+        consumoMedio = kmi / litros;
+
+        System.out.printf("O consumo médio do automóvel é: %.2f km/l", consumoMedio);
 
 		 //escreva seu código aqui
 
