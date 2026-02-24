@@ -7,7 +7,27 @@ import java.util.Scanner;
 public class Exercicio16 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in); 
+		double salarioCarlos;
+        double salarioJoao;
+        double valorCarlos;
+        double valorJoao;
+        int meses = 0;
 
+        System.out.print("Digite o salário de Carlos: ");
+        salarioCarlos = input.nextDouble();
+
+        salarioJoao = salarioCarlos / 3;
+
+        valorCarlos = salarioCarlos;
+        valorJoao = salarioJoao;
+
+        while (valorJoao < valorCarlos) {
+            valorCarlos = valorCarlos + (valorCarlos * 0.02);
+            valorJoao = valorJoao + (valorJoao * 0.05);
+            meses++;
+        }
+
+        System.out.println("Quantidade de meses necessários: " + meses);
 		//escreva seu código aqui
 		
 		input.close();
