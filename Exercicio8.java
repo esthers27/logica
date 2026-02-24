@@ -7,7 +7,22 @@ import java.util.Scanner;
 public class Exercicio8 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in); 
+        int quantidade;
+        double preco;
+        double total;
 
+        System.out.print("Digite a quantidade de maçãs compradas: ");
+        quantidade = input.nextInt();
+
+        if (quantidade < 12) {
+            preco = 0.30;
+        } else {
+            preco = 0.25;
+        }
+
+        total = quantidade * preco;
+
+        System.out.println("O custo total da compra é: R$ " + total);
 		 //escreva seu código aqui
 
 		input.close();
